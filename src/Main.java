@@ -1,4 +1,4 @@
-
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,8 @@ public class Main {
     }
 
     public static void installSystem(int clientDeviceYear, int os) {
-        if (clientDeviceYear <= 2014 && os == 0) {
+        int currentYear = LocalDate.now().getYear();
+        if (clientDeviceYear < currentYear && os == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (clientDeviceYear <= 2014 && os == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
